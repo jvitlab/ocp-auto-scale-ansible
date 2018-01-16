@@ -4,10 +4,10 @@
   vars:
     git_checkout_path: /tmp/ocp-auto
     inventory_file: "{{ git_checkout_path }}/hosts"
-    project_repo: https://github.com/jduncan-rva/ocp-auto-scale-ansible.git
-    tower_api_url: https://192.168.122.120/api/v2
-    hostname: 192.168.122.108
-    inventory_id: 6
+    project_repo: https://github.com/jvitlab/ocp-auto-scale-ansible.git
+    tower_api_url: https://awx-web-svc-awx.opsvana.com/api/v2
+    hostname: ocp1.opsvana.com 
+    inventory_id: 2
     new_host_parameters: openshift_schedulable=true
 
   tasks:
@@ -93,7 +93,7 @@
       - cleanup
 
   - name: push updated project repo
-    shell: git push https://{{ github_user }}:{{ github_pass }}@{{ project_repo }} --all -m 'updated by Ansible Tower on $(date +%s)'
+    shell: git push https://{{ github_user }}:{{ github_pass }}@{{ project_repo }} --all 
     args:
       chdir: "{{ git_checkout_path }}"
     tags:
