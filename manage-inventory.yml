@@ -7,7 +7,7 @@
     project_repo: https://github.com/jvitlab/ocp-auto-scale-ansible.git
     tower_api_url: https://awx-web-svc-awx.opsvana.com/api/v2
     hostname: ocp1.opsvana.com 
-    inventory_id: 2
+    inventory_id: 3
     new_host_parameters: openshift_schedulable=true
 
   tasks:
